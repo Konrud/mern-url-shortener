@@ -2,13 +2,13 @@ import React, { useCallback, useMemo, useState } from "react";
 import { getBaseServerURL } from "../../../utils";
 
 function useGetRequest(requestOpts) {
-    const url = `${getBaseServerURL()}/${requestOpts.url}`;
+    const url = `/${requestOpts.url}`;
     debugger;
     return _useRequest(url, { method: "GET" });
 }
 
 function usePostRequest(requestOpts) {
-    const url = `${getBaseServerURL()}/${requestOpts.url}`;
+    const url = `/${requestOpts.url}`;
     const headers = requestOpts.headers || {};
     headers["Content-Type"] = headers["Content-Type"] || "application/json";
     return _useRequest(url, { method: "POST", headers: headers });
