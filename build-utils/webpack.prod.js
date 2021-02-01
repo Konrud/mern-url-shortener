@@ -8,7 +8,7 @@ module.exports = {
     devtool: "source-map",
     plugins: [
         new Dotenv({
-            path: path.resolve(__dirname, "..", "./.env.production")
+            path: path.resolve(__dirname, "..", "./.env")
         }),
         // https://github.com/webpack-contrib/mini-css-extract-plugin
         new MiniCssExtractPlugin({
