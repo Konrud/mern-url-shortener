@@ -7,7 +7,7 @@ const ROUTES = require("../routes");
 
 
 const APP = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 const DB_URL = process.env.DB_URL;
 
 APP.disable('x-powered-by'); // turn off x-powered-by:express header
