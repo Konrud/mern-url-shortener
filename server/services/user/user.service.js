@@ -1,5 +1,5 @@
-import User from "../../models/user/user.model";
-import bcrypt from "bcryptjs";
+const User = require("../../models/user/user.model");
+const bcrypt = require("bcryptjs");
 
 async function getUserByEmail(email) {
     try {
@@ -31,4 +31,4 @@ async function _getHashedPassword(password, salt = 12) {
     return await bcrypt.hash(password, salt);
 }
 
-export default { getUserByEmail, createNewUser, checkPasswordsEquality };
+module.exports = { getUserByEmail, createNewUser, checkPasswordsEquality };

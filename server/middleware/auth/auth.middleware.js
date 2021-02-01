@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken";
+const jwt = require("jsonwebtoken");
 
 function getTokenMiddleware(req, res, next) {
     if (req.method === "OPTIONS") { return next(); } // we don't care about `OPTIONS` request
@@ -34,4 +34,4 @@ function _parseTokenFromHeader(headerValue) {
 }
 
 
-export default { getTokenMiddleware };
+module.exports = { getTokenMiddleware };

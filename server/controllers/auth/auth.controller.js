@@ -1,5 +1,5 @@
-import UserService from "../../services/user/user.service";
-import { getRegistrationValidationRules, getLoginValidationRules, validateResults, createJWTokenForUser } from "./auth.utils";
+const UserService = require("../../services/user/user.service");
+const { getRegistrationValidationRules, getLoginValidationRules, validateResults, createJWTokenForUser } = require("./auth.utils");
 
 async function register(req, res, next) {
     debugger;
@@ -66,4 +66,4 @@ async function login(req, res, next) {
 }
 
 
-export default { register, login, getRegistrationValidationRules, getLoginValidationRules };
+module.exports = { register, login, getRegistrationValidationRules, getLoginValidationRules };

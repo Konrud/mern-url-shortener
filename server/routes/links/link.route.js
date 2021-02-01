@@ -1,6 +1,6 @@
-import { Router } from "express";
-import Link_Controller from "../../controllers/link/link.controller";
-import authMiddleware from "../../middleware/auth/auth.middleware";
+const { Router } = require("express");
+const Link_Controller = require("../../controllers/link/link.controller");
+const authMiddleware = require("../../middleware/auth/auth.middleware");
 
 const ROUTER = Router();
 
@@ -11,5 +11,5 @@ ROUTER.post("/generate", authMiddleware.getTokenMiddleware, Link_Controller.gene
 ROUTER.get("/:id", authMiddleware.getTokenMiddleware, Link_Controller.getLinkByID);
 
 
-export default ROUTER;
+module.exports = ROUTER;
 

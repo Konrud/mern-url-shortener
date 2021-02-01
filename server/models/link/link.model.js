@@ -1,4 +1,4 @@
-import { Schema, model, Types } from "mongoose";
+const { Schema, model, Types } = require("mongoose");
 
 const linkSchema = new Schema({
     from: { type: String, required: true },
@@ -11,4 +11,4 @@ const linkSchema = new Schema({
 
 const Link = model("Link", linkSchema);
 
-export default Link;
+module.exports = Link;

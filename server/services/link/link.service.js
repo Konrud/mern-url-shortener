@@ -1,5 +1,5 @@
-import Link from "../../models/link/link.model";
-import shortid from "shortid";
+const Link = require("../../models/link/link.model");
+const shortid = require("shortid");
 
 async function getAllLinks(userID) {
     try {
@@ -75,4 +75,4 @@ async function _getExistingLink(link) {
     return await Link.findOne({ from: link });
 }
 
-export default { getAllLinks, generateLink, getLinkByID, getLinkByCode, increaseLinkClicks };
+module.exports = { getAllLinks, generateLink, getLinkByID, getLinkByCode, increaseLinkClicks };

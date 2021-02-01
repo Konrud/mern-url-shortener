@@ -1,4 +1,4 @@
-import LinkService from "../../services/link/link.service";
+const LinkService = require("../../services/link/link.service");
 
 async function getAllLinks(req, res, next) {
     try {
@@ -58,4 +58,4 @@ async function redirectCodedURL(req, res, next) {
     }
 }
 
-export default { getAllLinks, generateLink, getLinkByID, redirectCodedURL };
+module.exports =  { getAllLinks, generateLink, getLinkByID, redirectCodedURL };

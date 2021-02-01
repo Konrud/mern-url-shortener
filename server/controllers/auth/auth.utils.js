@@ -1,5 +1,5 @@
-import { check, validationResult } from "express-validator";
-import jwt from "jsonwebtoken";
+const { check, validationResult } = require("express-validator");
+const jwt = require("jsonwebtoken");
 
 function getRegistrationValidationRules() {
     return [
@@ -28,4 +28,4 @@ function createJWTokenForUser(user, secretKey, signInOptions = { expiresIn: "1h"
     );
 }
 
-export { getRegistrationValidationRules, getLoginValidationRules, validateResults, createJWTokenForUser };
+module.exports = { getRegistrationValidationRules, getLoginValidationRules, validateResults, createJWTokenForUser };

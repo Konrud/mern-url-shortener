@@ -1,6 +1,6 @@
-import auth from "./auth/auth.route";
-import link from "./links/link.route";
-import redirect from "./redirect/redirect.route";
+const auth = require("./auth/auth.route");
+const link = require("./links/link.route");
+const redirect = require("./redirect/redirect.route");
 
 
-export default { auth, link, redirect };
+module.exports = { auth, link, redirect };
