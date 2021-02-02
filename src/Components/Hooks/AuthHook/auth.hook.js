@@ -27,9 +27,9 @@ function useAuth() {
             const loginObjData = JSON.parse(loginData);
             if (loginObjData) {
                 login(loginObjData.token, loginObjData.userId);
-                setReady(true);
             }
         }
+        setReady(true);
     }, [login]);
 
     return { login, logout, token, userID, ready };

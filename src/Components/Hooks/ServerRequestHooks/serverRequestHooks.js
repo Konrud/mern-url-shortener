@@ -1,9 +1,7 @@
-import React, { useCallback, useMemo, useState } from "react";
-import { getBaseServerURL } from "../../../utils";
+import { useCallback, useState } from "react";
 
 function useGetRequest(requestOpts) {
     const url = `${requestOpts.url}`;
-    debugger;
     return _useRequest(url, { method: "GET" });
 }
 
@@ -23,8 +21,8 @@ function _useRequest(url, options) {
         async function makeRequest() {
             try {
                 setIsLoading(true);
-                const mergedOptions = _mergeOptions(options, requestOptions);
                 debugger;
+                const mergedOptions = _mergeOptions(options, requestOptions);
                 const response = await fetch(url, mergedOptions);
                 const resultObj = await ((options.responseType === "text") ? response.text() : response.json());
                 if (response.ok) {
@@ -42,7 +40,7 @@ function _useRequest(url, options) {
         };
 
         return makeRequest();
-    }, [url, options]);
+    }, [url]);
 
     return { result, error, isLoading, request };
 }

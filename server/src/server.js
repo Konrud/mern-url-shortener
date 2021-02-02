@@ -51,12 +51,10 @@ APP.use("/api/link", ROUTES.link);
 // REDIRECT LINKS ****************************
 APP.use("/t", ROUTES.redirect);
 
-const v = path.join(__dirname, "..", "..", "dist");
+// const v = path.join(__dirname, "..", "..", "dist");
 
-var i = path.resolve(__dirname, "..", "..", "dist", "index.html");
+// var i = path.resolve(__dirname, "..", "..", "dist", "index.html");
 
-
-var k = 0;
 // ===============================================================
 if (process.env.NODE_ENV === "production") {
     APP.use("/", express.static(path.join(__dirname, "..", "..", "dist")));
